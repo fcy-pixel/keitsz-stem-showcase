@@ -53,8 +53,15 @@ a{color:inherit;text-decoration:none}
 @keyframes pop{0%{transform:scale(.9);opacity:0}100%{transform:scale(1);opacity:1}}
 .hero-content{position:relative;z-index:2;text-align:center;padding:2rem;max-width:1000px;animation:pop .8s ease-out}
 .hero-logo{width:140px;height:auto;margin:0 auto 1.2rem;display:block;filter:drop-shadow(0 10px 30px rgba(124,58,237,.35)) drop-shadow(0 4px 12px rgba(255,77,141,.3));animation:float 4s ease-in-out infinite}
+.title-row{display:flex;align-items:center;justify-content:center;gap:1.2rem;flex-wrap:nowrap}
+.title-row h1{margin:0;flex-shrink:1;min-width:0;animation:none}
+.mascot{width:clamp(100px,16vw,200px);height:auto;flex-shrink:0;filter:drop-shadow(0 12px 28px rgba(124,58,237,.3)) drop-shadow(0 6px 14px rgba(255,77,141,.25))}
+.mascot.left{animation:waveL 3.2s ease-in-out infinite}
+.mascot.right{animation:waveR 3.2s ease-in-out infinite .4s}
+@keyframes waveL{0%,100%{transform:translateY(0) rotate(-3deg)}50%{transform:translateY(-14px) rotate(3deg)}}
+@keyframes waveR{0%,100%{transform:translateY(0) rotate(3deg)}50%{transform:translateY(-14px) rotate(-3deg)}}
 .footer-logo{width:80px;height:auto;margin:0 auto .8rem;display:block;filter:drop-shadow(0 4px 12px rgba(0,0,0,.2))}
-@media(max-width:700px){.hero-logo{width:110px}}
+@media(max-width:700px){.hero-logo{width:110px}.mascot{width:90px}.title-row{gap:.4rem}}
 .eyebrow{display:inline-block;padding:.5rem 1.3rem;border:2px solid #fff;border-radius:999px;color:#fff;font-size:.9rem;letter-spacing:.2em;margin-bottom:1.4rem;background:rgba(255,255,255,.25);backdrop-filter:blur(8px);font-weight:700;box-shadow:0 6px 20px rgba(124,58,237,.2)}
 .hero h1{font-family:"Orbitron","Noto Sans TC";font-size:clamp(2.4rem,6vw,4.8rem);line-height:1.05;margin:0 0 1.4rem;color:#fff;font-weight:900;text-shadow:0 4px 20px rgba(124,58,237,.4),0 2px 8px rgba(255,77,141,.3);animation:float 4s ease-in-out infinite}
 .hero h2{font-size:clamp(1.1rem,2vw,1.6rem);font-weight:700;color:#fff;margin:.5rem 0 2rem;text-shadow:0 2px 10px rgba(0,0,0,.15)}
@@ -136,7 +143,11 @@ footer h5{color:#fff;font-size:1.3rem;margin:0 0 .5rem;font-weight:900}
   <div class="hero-content">
     <img src="images/logo.png" alt="基慈小學校徽" class="hero-logo" width="140" height="168">
     <span class="eyebrow" data-edit="_eyebrow_0">STEM · AI · CODING · ROBOTICS</span>
-    <h1 data-edit="_hero_h1_0">中華基督教會基慈小學<br>創科教育</h1>
+    <div class="title-row">
+      <img src="images/mascot-boy.png" alt="基慈小學男生吉祥物" class="mascot left" width="200" height="360" loading="eager" decoding="async">
+      <h1 data-edit="_hero_h1_0">中華基督教會基慈小學<br>創科教育</h1>
+      <img src="images/mascot-girl.png" alt="基慈小學女生吉祥物" class="mascot right" width="200" height="360" loading="eager" decoding="async">
+    </div>
     <p class="lead" data-edit="_hero__lead_0">
       本校積極推動 STEM、編程、人工智能及機械人教育。
       學生從課堂走進比賽場、交流團、企業參觀及國際舞台，
