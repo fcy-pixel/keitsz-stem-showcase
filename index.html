@@ -1,0 +1,374 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>中華基督教會基慈小學 · STEM / AI / 編程教育成就展</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b1020;
+  --bg2:#121a35;
+  --card:#172043;
+  --card2:#1e2a5a;
+  --accent:#00e0ff;
+  --accent2:#ff3cac;
+  --accent3:#ffd84d;
+  --text:#f4f7ff;
+  --muted:#a3adca;
+  --gold:#ffcc33;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:"Noto Sans TC",system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--text);background:var(--bg);line-height:1.65;scroll-behavior:smooth}
+a{color:inherit;text-decoration:none}
+
+/* Hero */
+.hero{
+  min-height:92vh;
+  position:relative;
+  overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+  background:
+    radial-gradient(circle at 20% 20%,rgba(0,224,255,.25),transparent 55%),
+    radial-gradient(circle at 80% 30%,rgba(255,60,172,.25),transparent 55%),
+    radial-gradient(circle at 50% 90%,rgba(255,216,77,.2),transparent 55%),
+    linear-gradient(135deg,#050816 0%,#0f1840 50%,#1a0b3a 100%);
+}
+.stars{position:absolute;inset:0;background-image:
+  radial-gradient(1px 1px at 20% 30%,#fff,transparent),
+  radial-gradient(1px 1px at 70% 80%,#fff,transparent),
+  radial-gradient(2px 2px at 40% 60%,#fff,transparent),
+  radial-gradient(1px 1px at 90% 10%,#fff,transparent),
+  radial-gradient(1px 1px at 15% 80%,#fff,transparent),
+  radial-gradient(2px 2px at 55% 20%,#fff,transparent),
+  radial-gradient(1px 1px at 85% 45%,#fff,transparent);
+  opacity:.55;animation:drift 60s linear infinite;}
+@keyframes drift{from{background-position:0 0}to{background-position:600px 600px}}
+.hero-content{position:relative;z-index:2;text-align:center;padding:2rem;max-width:1000px}
+.eyebrow{display:inline-block;padding:.4rem 1.1rem;border:1px solid rgba(0,224,255,.5);border-radius:999px;color:var(--accent);font-size:.9rem;letter-spacing:.2em;margin-bottom:1.4rem;backdrop-filter:blur(6px);background:rgba(0,224,255,.08)}
+.hero h1{font-family:"Orbitron","Noto Sans TC";font-size:clamp(2rem,5vw,4rem);line-height:1.1;margin:0 0 1rem;background:linear-gradient(120deg,#fff 0%,#00e0ff 40%,#ff3cac 80%);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:900}
+.hero h2{font-size:clamp(1.1rem,2vw,1.6rem);font-weight:500;color:#e3ebff;margin:.5rem 0 2rem}
+.hero p.lead{font-size:1.05rem;color:var(--muted);max-width:760px;margin:0 auto 2.2rem}
+.cta-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn{padding:.9rem 1.6rem;border-radius:14px;font-weight:700;transition:.25s;display:inline-flex;align-items:center;gap:.5rem;border:none;cursor:pointer;font-size:1rem}
+.btn-primary{background:linear-gradient(135deg,#00e0ff,#4a6bff);color:#061020;box-shadow:0 10px 30px rgba(0,224,255,.35)}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 15px 35px rgba(0,224,255,.5)}
+.btn-ghost{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.2);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+
+/* Stats */
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;margin-top:3rem;max-width:900px;margin-left:auto;margin-right:auto}
+.stat{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:1.2rem;border-radius:16px;backdrop-filter:blur(10px)}
+.stat .n{font-family:"Orbitron";font-size:2.2rem;font-weight:900;background:linear-gradient(120deg,#00e0ff,#ff3cac);-webkit-background-clip:text;background-clip:text;color:transparent}
+.stat .l{color:var(--muted);font-size:.9rem;margin-top:.3rem}
+
+/* sections */
+section{padding:5rem 1.5rem;position:relative}
+.container{max-width:1200px;margin:0 auto}
+.section-title{text-align:center;margin-bottom:3.5rem}
+.section-title .tag{color:var(--accent);letter-spacing:.3em;font-size:.85rem;font-weight:700}
+.section-title h3{font-size:clamp(1.8rem,3.5vw,2.6rem);margin:.6rem 0 0;font-weight:900;background:linear-gradient(120deg,#fff,#a8b8ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.section-title p{color:var(--muted);max-width:700px;margin:1rem auto 0}
+
+/* Highlights */
+.highlights{background:linear-gradient(180deg,#0b1020 0%,#0d163a 100%)}
+.hl-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem}
+.hl-card{background:linear-gradient(135deg,var(--card) 0%,var(--card2) 100%);border-radius:20px;padding:0;position:relative;overflow:hidden;transition:.3s;border:1px solid rgba(255,255,255,.06);display:flex;flex-direction:column}
+.hl-card:hover{transform:translateY(-6px);box-shadow:0 20px 40px rgba(0,0,0,.4);border-color:var(--accent)}
+.hl-card .photo{position:relative;width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,rgba(0,224,255,.28),rgba(255,60,172,.28),rgba(255,216,77,.2));display:flex;align-items:center;justify-content:center;font-size:4rem;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.08)}
+.hl-card .photo::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,.18),transparent 50%),radial-gradient(circle at 80% 80%,rgba(0,0,0,.35),transparent 55%);pointer-events:none}
+.hl-card .photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.hl-card .photo .ph-emoji{position:relative;z-index:0;filter:drop-shadow(0 4px 16px rgba(0,0,0,.45));opacity:.9}
+.hl-card .photo .ph-tag{position:absolute;left:.8rem;bottom:.6rem;z-index:2;font-size:.72rem;letter-spacing:.12em;color:#fff;background:rgba(0,0,0,.45);padding:.2rem .55rem;border-radius:6px;backdrop-filter:blur(4px)}
+.hl-card .body{padding:1.4rem 1.6rem 1.6rem;display:flex;flex-direction:column;flex:1}
+.hl-card .icon{width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:.8rem;background:linear-gradient(135deg,rgba(0,224,255,.2),rgba(255,60,172,.2));border:1px solid rgba(0,224,255,.3)}
+.hl-card h4{margin:0 0 .5rem;font-size:1.15rem;font-weight:700}
+.hl-card .award{display:inline-block;background:linear-gradient(135deg,#ffd84d,#ff9a3c);color:#261000;font-weight:900;padding:.2rem .7rem;border-radius:8px;font-size:.78rem;margin-bottom:.7rem;letter-spacing:.05em}
+.hl-card p{color:var(--muted);font-size:.95rem;margin:0}
+
+/* Timeline */
+.timeline{background:var(--bg)}
+.tl{position:relative;padding-left:2rem}
+.tl::before{content:"";position:absolute;left:10px;top:0;bottom:0;width:3px;background:linear-gradient(180deg,var(--accent),var(--accent2),var(--accent3))}
+.tl-year{position:relative;margin-bottom:2.5rem;padding-left:2rem}
+.tl-year::before{content:"";position:absolute;left:-12px;top:10px;width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));box-shadow:0 0 0 5px var(--bg),0 0 20px rgba(0,224,255,.6)}
+.tl-year h4{font-family:"Orbitron";font-size:1.6rem;margin:0 0 1rem;color:var(--accent)}
+.tl-events{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:.9rem}
+.tl-event{background:var(--card);border-radius:14px;padding:0;border-left:4px solid var(--accent);transition:.25s;overflow:hidden;display:flex;flex-direction:column}
+.tl-event:hover{background:var(--card2);transform:translateX(6px)}
+.tl-event .thumb{position:relative;width:100%;aspect-ratio:16/9;background:linear-gradient(135deg,rgba(0,224,255,.22),rgba(255,60,172,.22));display:flex;align-items:center;justify-content:center;font-size:2.6rem;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.05)}
+.tl-event .thumb img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tl-event .thumb .ph-emoji{filter:drop-shadow(0 3px 10px rgba(0,0,0,.4));opacity:.85}
+.tl-event .info{padding:.85rem 1.1rem 1rem}
+.tl-event .t{font-weight:700;margin-bottom:.25rem}
+.tl-event .d{color:var(--muted);font-size:.85rem}
+.tl-event.win{border-left-color:var(--gold);background:linear-gradient(135deg,var(--card),rgba(255,204,51,.08))}
+.tl-event.win .t::before{content:"🏆 ";}
+.tl-event.trip{border-left-color:var(--accent2)}
+.tl-event.trip .t::before{content:"✈️ ";}
+.tl-event.ai{border-left-color:#a78bfa}
+.tl-event.ai .t::before{content:"🤖 ";}
+.tl-event.exhibit{border-left-color:#34d399}
+.tl-event.exhibit .t::before{content:"🎤 ";}
+
+/* Categories */
+.cats{background:linear-gradient(180deg,#0d163a 0%,#0b1020 100%)}
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.3rem}
+.cat{padding:2rem 1.5rem;border-radius:20px;text-align:center;transition:.3s;background:var(--card);border:1px solid rgba(255,255,255,.08)}
+.cat:hover{transform:translateY(-5px);border-color:var(--accent)}
+.cat .big{font-size:3rem;margin-bottom:.7rem}
+.cat h4{margin:.2rem 0 .5rem;font-size:1.1rem}
+.cat p{color:var(--muted);font-size:.9rem;margin:0}
+
+/* Partners */
+.partners{background:var(--bg)}
+.p-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem}
+.p-card{background:var(--card);border-radius:14px;padding:1.3rem;text-align:center;border:1px solid rgba(255,255,255,.06)}
+.p-card .n{font-weight:700;font-size:1rem;margin-bottom:.3rem;color:var(--accent)}
+.p-card .d{color:var(--muted);font-size:.85rem}
+
+/* Footer */
+footer{background:#050816;padding:3rem 1.5rem;text-align:center;color:var(--muted);border-top:1px solid rgba(255,255,255,.05)}
+footer h5{color:#fff;font-size:1.2rem;margin:0 0 .5rem}
+
+@media(max-width:700px){
+  .hero{min-height:85vh}
+  section{padding:3.5rem 1rem}
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="stars"></div>
+  <div class="hero-content">
+    <span class="eyebrow">STEM · AI · CODING · ROBOTICS</span>
+    <h1>基慈小學<br>創科教育成就展</h1>
+    <h2>自強不息 · 賴神益人 —— 由編程到 AI、由香港到世界</h2>
+    <p class="lead">
+      近五年來，本校積極推動 STEM、編程、人工智能及機械人教育。
+      學生從課堂走進比賽場、交流團、企業參觀及國際舞台，
+      在多項本地及海外賽事屢獲殊榮，並成為本港創科教育發展的重要夥伴。
+    </p>
+    <div class="cta-row">
+      <a href="#highlights" class="btn btn-primary">✨ 瀏覽亮點成就</a>
+      <a href="#timeline" class="btn btn-ghost">📅 歷年活動時間軸</a>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><div class="n">70+</div><div class="l">創科相關活動／比賽</div></div>
+      <div class="stat"><div class="n">4+</div><div class="l">重大比賽冠軍</div></div>
+      <div class="stat"><div class="n">5+</div><div class="l">跨境／境外交流團</div></div>
+      <div class="stat"><div class="n">5年</div><div class="l">持續推動 STEM 教育</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section id="highlights" class="highlights">
+  <div class="container">
+    <div class="section-title">
+      <span class="tag">FLAGSHIP ACHIEVEMENTS</span>
+      <h3>🌟 亮點成就</h3>
+      <p>以下為本校近年最具代表性的創科教育成果，展現學生在不同領域中從香港走向國際的實力。</p>
+    </div>
+
+    <div class="hl-grid">
+      <div class="hl-card">
+        <div class="photo"><span class="ph-emoji">🎮</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/highlights/01-coding-galaxy.jpg" alt="Coding Galaxy 冠軍" onerror="this.remove()"><span class="ph-tag">01 · CODING GALAXY</span></div>
+        <div class="body"><div class="icon">🎮</div><span class="award">冠軍</span><h4>Coding Galaxy 編程電競校際邀請賽</h4><p>學生於 Coding Galaxy E-Sports 校際邀請賽中勇奪冠軍，展現編程、策略及電競素養。</p></div>
+      </div>
+
+      <div class="hl-card">
+        <div class="photo"><span class="ph-emoji">🤖</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/highlights/02-mecha-league.jpg" alt="機甲聯盟冠軍" onerror="this.remove()"><span class="ph-tag">02 · 機甲聯盟</span></div>
+        <div class="body"><div class="icon">🤖</div><span class="award">冠軍</span><h4>機甲聯盟挑戰賽（黃大仙區）</h4><p>於機甲聯盟挑戰賽黃大仙區賽中奪冠，機械人設計、編程及協作能力獲高度肯定。</p></div>
+      </div>
+
+      <div class="hl-card">
+        <div class="photo"><span class="ph-emoji">🚀</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/highlights/03-r4m-taiwan.jpg" alt="R4M 台灣世界賽" onerror="this.remove()"><span class="ph-tag">03 · R4M 世界賽</span></div>
+        <div class="body"><div class="icon">🚀</div><span class="award">香港區冠軍 · 晉級台灣賽</span><h4>香港 R4M 機械人任務賽 / 機關王世界賽</h4><p>連續兩屆（2025、2026）參加 R4M 機械人任務賽，奪得香港區冠軍，並代表香港前往台灣參加世界總決賽。</p></div>
+      </div>
+
+      <div class="hl-card">
+        <div class="photo"><span class="ph-emoji">🎬</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/highlights/04-mit-node.jpg" alt="MIT Node 採訪" onerror="this.remove()"><span class="ph-tag">04 · MIT NODE 專訪</span></div>
+        <div class="body"><div class="icon">🎬</div><span class="award">MIT 官方採訪</span><h4>CoolThink@JC · MIT Node 專訪</h4><p>學生獲 MIT App Inventor 團隊 (MIT Node) 採訪，分享本校編程學習歷程，登上國際教育舞台。</p></div>
+      </div>
+
+      <div class="hl-card">
+        <div class="photo"><span class="ph-emoji">🛰️</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/highlights/05-wenchang.jpg" alt="海南島文昌航天" onerror="this.remove()"><span class="ph-tag">05 · 文昌航天</span></div>
+        <div class="body"><div class="icon">🛰️</div><span class="award">海外交流</span><h4>海南島文昌航天科普基地培訓班</h4><p>學生親赴海南島文昌航天科普基地，見證火箭升空、體驗航天科普課程，激發科研志向。</p></div>
+      </div>
+
+      <div class="hl-card">
+        <div class="photo"><span class="ph-emoji">🧠</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/highlights/06-ai-mainland.jpg" alt="新時代築夢 AI 交流團" onerror="this.remove()"><span class="ph-tag">06 · 新時代築夢</span></div>
+        <div class="body"><div class="icon">🧠</div><span class="award">內地交流</span><h4>「新時代築夢計劃」— AI 主題交流團</h4><p>學生參加「人工智能」主題內地交流團，走訪內地機械人比賽及 AI 教育場域，拓寬國際視野。</p></div>
+      </div>
+
+      <div class="hl-card">
+        <div class="photo"><span class="ph-emoji">💡</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/highlights/07-sensetime.jpg" alt="商湯科技參訪" onerror="this.remove()"><span class="ph-tag">07 · SENSETIME</span></div>
+        <div class="body"><div class="icon">💡</div><span class="award">頂尖企業參觀</span><h4>商湯科技 SenseTime · AI 公司參訪</h4><p>學生獲安排參觀全球領先 AI 企業「商湯科技」，認識前沿人工智能技術在真實產業中的應用。</p></div>
+      </div>
+
+      <div class="hl-card">
+        <div class="photo"><span class="ph-emoji">🎓</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/highlights/08-hkfyg-ai.jpg" alt="青協 AI 智能團" onerror="this.remove()"><span class="ph-tag">08 · 青協 AI 智能團</span></div>
+        <div class="body"><div class="icon">🎓</div><span class="award">青協精英計劃</span><h4>青協 AI 智能團</h4><p>獲選參加香港青年協會 AI 智能團，與本港優秀中小學生共學 AI 前沿知識及專題研習。</p></div>
+      </div>
+
+      <div class="hl-card">
+        <div class="photo"><span class="ph-emoji">🥽</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/highlights/09-eduhk-vr.jpg" alt="教大 VR 課程合作" onerror="this.remove()"><span class="ph-tag">09 · EdUHK VR</span></div>
+        <div class="body"><div class="icon">🥽</div><span class="award">大學合作</span><h4>香港教育大學 · VR 課程共同開發</h4><p>與香港教育大學合作研發 VR 沉浸式課程，將虛擬實境引入小學課堂，成為教研合作範例。</p></div>
+      </div>
+
+      <div class="hl-card">
+        <div class="photo"><span class="ph-emoji">📚</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/highlights/10-lt-expo.jpg" alt="學與教博覽" onerror="this.remove()"><span class="ph-tag">10 · L&T EXPO</span></div>
+        <div class="body"><div class="icon">📚</div><span class="award">展覽 / 分享</span><h4>學與教博覽 (L&T Expo) 分享</h4><p>連續多屆應邀於亞洲最大型教育科技展「學與教博覽」擺設展覽，向全港中小學分享本校 STEM 課程經驗。</p></div>
+      </div>
+
+      <div class="hl-card">
+        <div class="photo"><span class="ph-emoji">🧪</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/highlights/11-eduhk-codingfair.jpg" alt="教大 Coding Fair" onerror="this.remove()"><span class="ph-tag">11 · CODING FAIR</span></div>
+        <div class="body"><div class="icon">🧪</div><span class="award">大學展覽</span><h4>香港教育大學 Coding Fair 編程展覽</h4><p>2022-2023 年度獲邀參加教大 Coding Fair，展示學生編程作品及教學成果。</p></div>
+      </div>
+
+      <div class="hl-card">
+        <div class="photo"><span class="ph-emoji">👨‍🚀</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/highlights/12-astronaut.jpg" alt="航天員進校園" onerror="this.remove()"><span class="ph-tag">12 · 航天員進校園</span></div>
+        <div class="body"><div class="icon">👨‍🚀</div><span class="award">國家級活動</span><h4>國慶 75 周年 · 航天員進校園</h4><p>本校學生參與「國慶 75 周年—航天員進校園」活動，與國家航天員近距離交流。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="cats">
+  <div class="container">
+    <div class="section-title">
+      <span class="tag">FOUR PILLARS</span>
+      <h3>🧭 創科教育四大範疇</h3>
+      <p>本校以全方位課程及多元化活動推動四大創科範疇，讓學生建立紮實的 21 世紀學習能力。</p>
+    </div>
+    <div class="cat-grid">
+      <div class="cat"><div class="big">💻</div><h4>編程 Coding</h4><p>Scratch · App Inventor · Python · CoolThink@JC · Minecraft Education</p></div>
+      <div class="cat"><div class="big">🤖</div><h4>機械人 Robotics</h4><p>R4M · 機甲聯盟 · 多足機械人 · 機關王世界賽</p></div>
+      <div class="cat"><div class="big">🧠</div><h4>人工智能 AI</h4><p>AI 家長工作坊 · AI 體驗嘉年華 · 商湯參訪 · 青協 AI 智能團</p></div>
+      <div class="cat"><div class="big">🔬</div><h4>STEM / STEAM</h4><p>無人機 · 火箭車 · 環保風力 · 3D 打印 · VR · STEM in PE</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline" class="timeline">
+  <div class="container">
+    <div class="section-title">
+      <span class="tag">JOURNEY 2021 → 2026</span>
+      <h3>📅 歷年創科活動時間軸</h3>
+      <p>從 2021 年至今，學生參與超過 70 項 STEM、編程、AI 及機械人相關活動／比賽。</p>
+    </div>
+
+    <div class="tl">
+
+      <div class="tl-year">
+        <h4>2025 – 2026 年度</h4>
+        <div class="tl-events">
+          <div class="tl-event win"><div class="thumb"><span class="ph-emoji">🏆</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/timeline/01-香港-r4m-機械人任務賽先導賽-2026.jpg" alt="香港 R4M 機械人任務賽先導賽 2026" onerror="this.remove()"></div><div class="info"><div class="t">香港 R4M 機械人任務賽先導賽 2026</div><div class="d">晉級國際賽 · 8 位學生參與</div></div></div>
+          <div class="tl-event trip"><div class="thumb"><span class="ph-emoji">✈️</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/timeline/02-新時代築夢計劃-人工智能主題交流團.jpg" alt="「新時代築夢計劃」— 人工智能主題交流團" onerror="this.remove()"></div><div class="info"><div class="t">「新時代築夢計劃」— 人工智能主題交流團</div><div class="d">內地 AI 及機械人交流</div></div></div>
+          <div class="tl-event ai"><div class="thumb"><span class="ph-emoji">🤖</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/timeline/03-ai-家長工作坊-活用-ai助力學習.jpg" alt="AI 家長工作坊 — 活用 AI，助力學習" onerror="this.remove()"></div><div class="info"><div class="t">AI 家長工作坊 — 活用 AI，助力學習</div><div class="d">家長科普 · 近 400 位家庭參與</div></div></div>
+          <div class="tl-event ai"><div class="thumb"><span class="ph-emoji">🤖</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/timeline/04-商湯科技-sensetime-企業參訪.jpg" alt="商湯科技 SenseTime 企業參訪" onerror="this.remove()"></div><div class="info"><div class="t">商湯科技 SenseTime 企業參訪</div><div class="d">AI 前沿技術體驗</div></div></div>
+          <div class="tl-event ai"><div class="thumb"><span class="ph-emoji">🤖</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/timeline/05-青協-ai-智能團.jpg" alt="青協 AI 智能團" onerror="this.remove()"></div><div class="info"><div class="t">青協 AI 智能團</div><div class="d">與本港頂尖學生共學 AI</div></div></div>
+          <div class="tl-event "><div class="thumb"><span class="ph-emoji">🔬</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/timeline/06-香港教育大學-vr-課程合作開發.jpg" alt="香港教育大學 VR 課程合作開發" onerror="this.remove()"></div><div class="info"><div class="t">香港教育大學 VR 課程合作開發</div><div class="d">教研合作 · 沉浸式學習</div></div></div>
+          <div class="tl-event "><div class="thumb"><span class="ph-emoji">🔬</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/timeline/07-全港中小學環保風力發電機創作大賽-2025.jpg" alt="全港中小學環保風力發電機創作大賽 2025" onerror="this.remove()"></div><div class="info"><div class="t">全港中小學環保風力發電機創作大賽 2025</div><div class="d">STEM 創作</div></div></div>
+          <div class="tl-event "><div class="thumb"><span class="ph-emoji">🔬</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/timeline/08-校外科學探索-t-park香港醫學博物館.jpg" alt="校外科學探索 — T·PARK、香港醫學博物館" onerror="this.remove()"></div><div class="info"><div class="t">校外科學探索 — T·PARK、香港醫學博物館</div><div class="d">跨學科探究學習</div></div></div>
+        </div>
+      </div>
+
+      <div class="tl-year">
+        <h4>2024 – 2025 年度</h4>
+        <div class="tl-events">
+          <div class="tl-event win"><div class="thumb"><span class="ph-emoji">🏆</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/timeline/09-機甲聯盟挑戰賽-黃大仙區-冠軍.jpg" alt="機甲聯盟挑戰賽 — 黃大仙區 冠軍" onerror="this.remove()"></div><div class="info"><div class="t">機甲聯盟挑戰賽 — 黃大仙區 冠軍</div><div class="d">機械人設計及編程</div></div></div>
+          <div class="tl-event win"><div class="thumb"><span class="ph-emoji">🏆</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/timeline/10-香港-r4m-機械人任務賽先導賽-2025-香港冠軍.jpg" alt="香港 R4M 機械人任務賽先導賽 2025 香港冠軍" onerror="this.remove()"></div><div class="info"><div class="t">香港 R4M 機械人任務賽先導賽 2025 香港冠軍</div><div class="d">代表香港晉級台灣世界總決賽</div></div></div>
+          <div class="tl-event win"><div class="thumb"><span class="ph-emoji">🏆</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/timeline/11-機關王世界賽機械人任務項目-世界總決賽.jpg" alt="「機關王世界賽」機械人任務項目 世界總決賽" onerror="this.remove()"></div><div class="info"><div class="t">「機關王世界賽」機械人任務項目 世界總決賽</div><div class="d">台灣比賽 · 賽前訓練班</div></div></div>
+          <div class="tl-event exhibit"><div class="thumb"><span class="ph-emoji">🎤</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/timeline/12-學與教博覽-2025-擺設展覽.jpg" alt="學與教博覽 2025 擺設展覽" onerror="this.remove()"></div><div class="info"><div class="t">學與教博覽 2025 擺設展覽</div><div class="d">分享本校 STEM 教學實踐</div></div></div>
+          <div class="tl-event "><div class="thumb"><span class="ph-emoji">🔬</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/timeline/13-鵬程慈善基金-stem-in-pe-設計比賽-決賽.jpg" alt="鵬程慈善基金 STEM in PE 設計比賽（決賽）" onerror="this.remove()"></div><div class="info"><div class="t">鵬程慈善基金 STEM in PE 設計比賽（決賽）</div><div class="d">跨學科 STEM × 體育</div></div></div>
+          <div class="tl-event "><div class="thumb"><span class="ph-emoji">🔬</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/timeline/14-3d-打印親子工作坊-創意與抒壓之旅.jpg" alt="3D 打印親子工作坊 — 創意與抒壓之旅" onerror="this.remove()"></div><div class="info"><div class="t">3D 打印親子工作坊 — 創意與抒壓之旅</div><div class="d">家校共學</div></div></div>
+          <div class="tl-event trip"><div class="thumb"><span class="ph-emoji">✈️</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/timeline/15-國慶-75-周年-航天員進校園活動.jpg" alt="國慶 75 周年 — 航天員進校園活動" onerror="this.remove()"></div><div class="info"><div class="t">國慶 75 周年 — 航天員進校園活動</div><div class="d">與國家航天員交流</div></div></div>
+          <div class="tl-event exhibit"><div class="thumb"><span class="ph-emoji">🎤</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/timeline/16-學與教展覽-2024-imxpo-2024.jpg" alt="學與教展覽 2024 / IMXpo 2024" onerror="this.remove()"></div><div class="info"><div class="t">學與教展覽 2024 / IMXpo 2024</div><div class="d">學生作品展示</div></div></div>
+        </div>
+      </div>
+
+      <div class="tl-year">
+        <h4>2023 – 2024 年度</h4>
+        <div class="tl-events">
+          <div class="tl-event win"><div class="thumb"><span class="ph-emoji">🏆</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/timeline/17-coding-galaxy-e-sports-校際邀請賽-冠軍.jpg" alt="Coding Galaxy E-Sports 校際邀請賽 冠軍" onerror="this.remove()"></div><div class="info"><div class="t">Coding Galaxy E-Sports 校際邀請賽 冠軍</div><div class="d">編程電競雙料奪魁</div></div></div>
+          <div class="tl-event trip"><div class="thumb"><span class="ph-emoji">✈️</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/timeline/18-文昌航天科普基地培訓班-海南島.jpg" alt="文昌航天科普基地培訓班（海南島）" onerror="this.remove()"></div><div class="info"><div class="t">文昌航天科普基地培訓班（海南島）</div><div class="d">火箭升空團 · 航天科普</div></div></div>
+          <div class="tl-event ai"><div class="thumb"><span class="ph-emoji">🤖</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/timeline/19-coolthinkjc-mit-node-採訪學生.jpg" alt="CoolThink@JC · MIT Node 採訪學生" onerror="this.remove()"></div><div class="info"><div class="t">CoolThink@JC · MIT Node 採訪學生</div><div class="d">MIT App Inventor 團隊國際採訪</div></div></div>
+          <div class="tl-event "><div class="thumb"><span class="ph-emoji">🔬</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/timeline/20-coolthinkjc-編程及-stem-嘉年華-2024.jpg" alt="CoolThink@JC 編程及 STEM 嘉年華 2024" onerror="this.remove()"></div><div class="info"><div class="t">CoolThink@JC 編程及 STEM 嘉年華 2024</div><div class="d">編程作品展示</div></div></div>
+          <div class="tl-event ai"><div class="thumb"><span class="ph-emoji">🤖</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/timeline/21-ai-人工智能體驗嘉年華.jpg" alt="AI 人工智能體驗嘉年華" onerror="this.remove()"></div><div class="info"><div class="t">AI 人工智能體驗嘉年華</div><div class="d">學生 AI 啓蒙體驗</div></div></div>
+          <div class="tl-event "><div class="thumb"><span class="ph-emoji">🔬</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/timeline/22-coolthink-遊戲程式編寫親子工作坊.jpg" alt="Coolthink@ 遊戲程式編寫親子工作坊" onerror="this.remove()"></div><div class="info"><div class="t">Coolthink@ 遊戲程式編寫親子工作坊</div><div class="d">200+ 家庭報名</div></div></div>
+          <div class="tl-event "><div class="thumb"><span class="ph-emoji">🔬</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/timeline/23-2024-香港資訊及通訊科技獎-學生創新獎培訓班.jpg" alt="2024 香港資訊及通訊科技獎 — 學生創新獎培訓班" onerror="this.remove()"></div><div class="info"><div class="t">2024 香港資訊及通訊科技獎 — 學生創新獎培訓班</div><div class="d">ICT Awards 培訓</div></div></div>
+          <div class="tl-event "><div class="thumb"><span class="ph-emoji">🔬</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/timeline/24-中華基督教會聯校火箭車大賽.jpg" alt="中華基督教會聯校火箭車大賽" onerror="this.remove()"></div><div class="info"><div class="t">中華基督教會聯校火箭車大賽</div><div class="d">區會聯校創科盛事</div></div></div>
+        </div>
+      </div>
+
+      <div class="tl-year">
+        <h4>2022 – 2023 年度</h4>
+        <div class="tl-events">
+          <div class="tl-event exhibit"><div class="thumb"><span class="ph-emoji">🎤</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/timeline/25-香港教育大學-coding-fair-編程展覽.jpg" alt="香港教育大學 Coding Fair 編程展覽" onerror="this.remove()"></div><div class="info"><div class="t">香港教育大學 Coding Fair 編程展覽</div><div class="d">大學展覽 · 作品分享</div></div></div>
+          <div class="tl-event "><div class="thumb"><span class="ph-emoji">🔬</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/timeline/26-第六屆-stem-香港小學生大獎賽.jpg" alt="第六屆 STEM 香港小學生大獎賽" onerror="this.remove()"></div><div class="info"><div class="t">第六屆 STEM 香港小學生大獎賽</div><div class="d">本港代表性 STEM 賽事</div></div></div>
+          <div class="tl-event "><div class="thumb"><span class="ph-emoji">🔬</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/timeline/27-imxpo-2023-全港學界-steam-賽車挑戰賽.jpg" alt="IMXpo 2023 全港學界 STEAM 賽車挑戰賽" onerror="this.remove()"></div><div class="info"><div class="t">IMXpo 2023 全港學界 STEAM 賽車挑戰賽</div><div class="d">STEAM 工程挑戰</div></div></div>
+          <div class="tl-event "><div class="thumb"><span class="ph-emoji">🔬</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/timeline/28-中小學創新工程教育計劃啓動禮.jpg" alt="中小學創新工程教育計劃啓動禮" onerror="this.remove()"></div><div class="info"><div class="t">中小學創新工程教育計劃啓動禮</div><div class="d">「工程伴理行」分享會</div></div></div>
+          <div class="tl-event "><div class="thumb"><span class="ph-emoji">🔬</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/timeline/29-coolthinkjc-學生編程座談會-嘉年華-2023.jpg" alt="CoolThink@JC 學生編程座談會 / 嘉年華 2023" onerror="this.remove()"></div><div class="info"><div class="t">CoolThink@JC 學生編程座談會 / 嘉年華 2023</div><div class="d">編程學習交流</div></div></div>
+          <div class="tl-event "><div class="thumb"><span class="ph-emoji">🔬</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/timeline/30-聯校無人機挑戰賽-火箭車大賽.jpg" alt="聯校無人機挑戰賽 / 火箭車大賽" onerror="this.remove()"></div><div class="info"><div class="t">聯校無人機挑戰賽 / 火箭車大賽</div><div class="d">區會聯校 STEM 活動</div></div></div>
+        </div>
+      </div>
+
+      <div class="tl-year">
+        <h4>2021 – 2022 年度</h4>
+        <div class="tl-events">
+          <div class="tl-event "><div class="thumb"><span class="ph-emoji">🔬</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/timeline/31-coding-galaxy-e-sports-校際邀請賽及培訓班.jpg" alt="Coding Galaxy E-Sports 校際邀請賽及培訓班" onerror="this.remove()"></div><div class="info"><div class="t">Coding Galaxy E-Sports 校際邀請賽及培訓班</div><div class="d">編程電競起步</div></div></div>
+          <div class="tl-event "><div class="thumb"><span class="ph-emoji">🔬</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/timeline/32-第四屆-stem-香港小學生大獎賽.jpg" alt="第四屆 STEM 香港小學生大獎賽" onerror="this.remove()"></div><div class="info"><div class="t">第四屆 STEM 香港小學生大獎賽</div><div class="d">本港 STEM 大賽</div></div></div>
+          <div class="tl-event "><div class="thumb"><span class="ph-emoji">🔬</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/timeline/33-第一屆-minecraft-education-edition-運算思維大賽.jpg" alt="第一屆 Minecraft Education Edition 運算思維大賽" onerror="this.remove()"></div><div class="info"><div class="t">第一屆 Minecraft Education Edition 運算思維大賽</div><div class="d">運算思維 · 遊戲化學習</div></div></div>
+          <div class="tl-event "><div class="thumb"><span class="ph-emoji">🔬</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/timeline/34-多足機械人培訓班-科創起承.jpg" alt="多足機械人培訓班（科創．起．承）" onerror="this.remove()"></div><div class="info"><div class="t">多足機械人培訓班（科創．起．承）</div><div class="d">24 位學生受訓</div></div></div>
+          <div class="tl-event "><div class="thumb"><span class="ph-emoji">🔬</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/timeline/35-無人機小學邀請賽-無人機挑戰賽.jpg" alt="無人機小學邀請賽 / 無人機挑戰賽" onerror="this.remove()"></div><div class="info"><div class="t">無人機小學邀請賽 / 無人機挑戰賽</div><div class="d">航拍及編程操控</div></div></div>
+          <div class="tl-event "><div class="thumb"><span class="ph-emoji">🔬</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/timeline/36-全港中小學環保風力發電機-stem-創作大賽-2022.jpg" alt="全港中小學環保風力發電機 STEM 創作大賽 2022" onerror="this.remove()"></div><div class="info"><div class="t">全港中小學環保風力發電機 STEM 創作大賽 2022</div><div class="d">綠色 STEM 創作</div></div></div>
+          <div class="tl-event "><div class="thumb"><span class="ph-emoji">🔬</span><img loading="lazy" decoding="async" width="1280" height="720" src="images/timeline/37-零碳天地-steam-互動工作坊.jpg" alt="零碳天地 STEAM 互動工作坊" onerror="this.remove()"></div><div class="info"><div class="t">零碳天地 STEAM 互動工作坊</div><div class="d">環保 × STEAM</div></div></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PARTNERS -->
+<section class="partners">
+  <div class="container">
+    <div class="section-title">
+      <span class="tag">COLLABORATIONS</span>
+      <h3>🤝 合作夥伴與支援機構</h3>
+      <p>本校的創科成就，有賴眾多本地及國際機構、大學、企業及基金會的鼎力支持。</p>
+    </div>
+    <div class="p-grid">
+      <div class="p-card"><div class="n">MIT App Inventor</div><div class="d">MIT Node 採訪合作</div></div>
+      <div class="p-card"><div class="n">香港教育大學</div><div class="d">VR 課程共同開發 · Coding Fair</div></div>
+      <div class="p-card"><div class="n">商湯科技 SenseTime</div><div class="d">AI 企業參訪</div></div>
+      <div class="p-card"><div class="n">香港青年協會</div><div class="d">AI 智能團</div></div>
+      <div class="p-card"><div class="n">CoolThink@JC</div><div class="d">賽馬會運算思維計劃</div></div>
+      <div class="p-card"><div class="n">優質教育基金 QEF</div><div class="d">電子學習撥款計劃</div></div>
+      <div class="p-card"><div class="n">鵬程慈善基金</div><div class="d">STEM in PE 設計比賽</div></div>
+      <div class="p-card"><div class="n">文昌航天科普基地</div><div class="d">海南島航天培訓</div></div>
+      <div class="p-card"><div class="n">學與教博覽 L&T Expo</div><div class="d">教育科技展覽夥伴</div></div>
+      <div class="p-card"><div class="n">中華基督教會香港區會</div><div class="d">聯校火箭車 / 無人機大賽</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <h5>中華基督教會基慈小學</h5>
+  <div>The Church of Christ in China Kei Tsz Primary School</div>
+  <div style="margin-top:.5rem">九龍慈雲山道 152 號 · Tel: 2322 5122 · www.keitsz.edu.hk</div>
+  <div style="margin-top:1.5rem;font-size:.85rem;opacity:.6">© 基慈小學 資訊科技組 · 創科成就展</div>
+</footer>
+
+</body>
+</html>
